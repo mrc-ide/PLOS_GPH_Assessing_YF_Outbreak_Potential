@@ -6,7 +6,7 @@ library(Rmisc)
 #Set folders to source environmental data and raw MCMC output
 {
   dir1="Documents/00 - Big data files to back up infrequently/00 - YellowFeverDynamics key datasets"
-  dir2a="OneDrive - Imperial College London/Cluster model runs data"
+  dir2a="OneDrive - Imperial College London/Cluster model runs data/Complete"
   dir2b="Run2023_10_D_YEP_sero_case_272regions_det_updated_priors_test2/outputs"
   dir2c=c("A","B","C","D")
 
@@ -84,13 +84,18 @@ R0_labels=10^c(R0_limits[1]:R0_limits[2])
 G1_all$p_R0 <- G1_all$p_R0 + scale_y_continuous(name="R0 coefficients",breaks=log(R0_labels,10),labels=R0_labels,
                                                 limits=R0_limits)
 
+#Set iteration numbers correctly to take into account missing values
+it_values1=rep(c(1:9990),10)+sort(rep(c(0:9)*10000,9990))
+it_values2=it_values1[c(60000:length(it_values1))]
+
 #Print graphs with limits
 {
   png(filename="images/Real - SI/real_4chains.png",width=1440,height=720)
   par(mar=c(5,5,1,1))
   matplot(x=c(0,100000),y=c(-4700,-4238),type="p",col=0,xlab="Iteration",ylab="Log posterior probability",cex.lab=2.0,cex.axis=2.0)
   for(n in selection){
-    matplot(x=c(1:length(chain_data1$like_values[[n]])),y=chain_data1$like_values[[n]],type="l",col=n,add=TRUE)
+    #matplot(x=c(1:length(chain_data1$like_values[[n]])),y=chain_data1$like_values[[n]],type="l",col=n,add=TRUE)
+    matplot(x=it_values1,y=chain_data1$like_values[[n]],type="l",col=n,add=TRUE)
   }
   dev.off()
   png(filename="images/Real - SI/real_4chains_post_burnin.png",width=1440,height=720)
@@ -98,7 +103,8 @@ G1_all$p_R0 <- G1_all$p_R0 + scale_y_continuous(name="R0 coefficients",breaks=lo
   matplot(x=c(60000,100000),y=c(-4270,-4238),type="p",col=0,xlab="Iteration",ylab="Log posterior probability",
           cex.lab=2.0,cex.axis=2.0)
   for(n in selection){
-    matplot(x=59999+c(1:length(chain_data2$like_values[[n]])),y=chain_data2$like_values[[n]],type="l",col=n,add=TRUE)
+    #matplot(x=59999+c(1:length(chain_data2$like_values[[n]])),y=chain_data2$like_values[[n]],type="l",col=n,add=TRUE)
+    matplot(x=it_values2,y=chain_data2$like_values[[n]],type="l",col=n,add=TRUE)
   }
   dev.off()
   png(filename="images/Real - SI/real_FOI_coeffs_fit.png",width=1680,height=600)

@@ -106,13 +106,15 @@ for(i in 1:length(selection)){
 
 #Print graphs
 {
-  setwd(paste(comp,dir1b,"images02 - SI IGL",sep="/"))
-  png(filename="IGL_4chains.png",width=1440,height=720)
+  #Set iteration numbers correctly to take into account missing values
+  it_values1=rep(c(1:9990),10)+sort(rep(c(0:9)*10000,9990))
+  
+  png(filename="images/IGL - SI/IGL_4chains_new.png",width=1440,height=840)
   par(mar=c(5,5,1,1))
-  matplot(x=c(0,100000),y=c(-440,-280),type="p",col=0,xlab="Iteration",ylab="Log posterior probability",
-          cex.lab=2.0,cex.axis=2.0)
-  for(n in selection){
-    matplot(x=c(1:length(chain_data1$like_values[[n]])),y=chain_data1$like_values[[n]],type="l",col=n,add=TRUE)
+  matplot(x=c(1,max(end_values)),y=c(like_min,like_max),type="p",col=0,xlab="Iteration",ylab="Log posterior probability",cex.axis=2.0,cex.lab=2.0)
+  for(i in 1:length(datasets_selected)){
+    n_data=datasets_selected[i]
+    matplot(x=it_values1,y=like_values[[n_data]],type="l",col=n_data,add=TRUE)
   }
   dev.off()
   png(filename="IGL_FOI_coeffs_fit.png",width=1440,height=720)
