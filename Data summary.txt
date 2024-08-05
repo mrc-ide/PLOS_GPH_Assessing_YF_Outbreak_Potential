@@ -2,7 +2,7 @@ Summary of datasets present in paper and locations in this repository
 
 ----SIMULATED DATA - PARAMETER ESTIMATION INPUTS----
 
-Data generated via simulation using the model itself and input data used for the simulation are located in folder data/IGL. Summary of files:
+Data generated via simulation using the model itself and input data used for the simulation are located in folder Data/Simulated. Summary of files:
 
 enviro_data_IGL_new2.csv - Environmental covariate values for simulated regions
 enviro_coeffs_IGL_new2.csv - Coefficients of environmental covariates
@@ -14,7 +14,7 @@ obs_sero_data_IGL_new2_sparse.csv - Annual simulated serological survey data use
 
 ----SIMULATED DATA - PARAMETER ESTIMATION RESULTS----
 
-Results of model parameter estimation based on the simulated data are located in folder data/IGL. Summary of files:
+Results of model parameter estimation based on the simulated data are located in folder Data/Simulated. Summary of files:
 
 IGL_new2_5_iterations_inputs_4_best_likelihoods_1_lowest_50sets.csv - Output of preliminary fitting, used as input for MCMC model parameter estimation
 chain_data_combined.Rds - Post-burn-in MCMC model parameter estimation results
@@ -23,7 +23,7 @@ data_match_1000values.Rds - 1000 sets of annual case/death and serological surve
 
 ----REAL DATA - PARAMETER ESTIMATION INPUTS----
 
-Real-world data used for model parameter estimation is located in folder data/Real - Run2023_10_D_YEP_sero_case_272regions_det_updated_priors_test2. Summary of files:
+Real-world data used for model parameter estimation is located in folder Data/Real. Summary of files:
 
 case_data_la_omit_COL26_3_6countries.csv - Annual reported case and death data from selected South American countries, compiled from PAHO website (see text)
 sero_data_af.csv - Compiled data from a number of serological surveys across multiple African countries, supplied by the WHO (see text)
@@ -32,14 +32,14 @@ enviro_data_272regions_6cov - Environmental covariate values for same regions
 
 ----REAL DATA - PARAMETER ESTIMATION RESULTS----
 
-Results of parameter estimation using real data are located in folder data/Real - Run2023_10_D_YEP_sero_case_272regions_det_updated_priors_test2. Summary of files:
+Results of parameter estimation using real data are located in folder Data/Real. Summary of files:
 
 chain_inputs_prelim_fit02_best4.csv - Output of preliminary fitting, used as input for MCMC model parameter estimation
 chain_data_combined.Rds - Post-burn-in MCMC model parameter estimation results
 
 ----REAL DATA - ADDITIONAL----
 
-Additional data used to generate graphs and maps in the paper are found in folder data/Real - Run2023_10_D_YEP_sero_case_272regions_det_updated_priors_test2. Summary of files:
+Additional data used to generate graphs and maps in the paper are found in folder Data/Real. Summary of files:
 
 case_data_af_adm1_2000_2020.csv - Annual reported case and death data from selected African countries, compiled from WHO website (see text)
 input_data_224_regions_case_sero_af.Rds - Dataset of population and vaccination coverage data for regions in African annual case/death data
