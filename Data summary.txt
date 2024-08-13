@@ -17,7 +17,8 @@ obs_sero_data_IGL_new2_sparse.csv - Annual simulated serological survey data use
 Results of model parameter estimation based on the simulated data are located in folder Data/Simulated. Summary of files:
 
 IGL_new2_5_iterations_inputs_4_best_likelihoods_1_lowest_50sets.csv - Output of preliminary fitting, used as input for MCMC model parameter estimation
-chain_data_combined.Rds - Post-burn-in MCMC model parameter estimation results
+raw_simulated_data.zip - Compressed output data from MCMC model parameter estimation (4 chains, A-D)
+chain_data_combined.Rds - Combined post-burn-in MCMC model parameter estimation results
 
 data_match_1000values.Rds - 1000 sets of annual case/death and serological survey data re-simulated using estimated model parameters
 
@@ -35,7 +36,8 @@ enviro_data_272regions_6cov - Environmental covariate values for same regions
 Results of parameter estimation using real data are located in folder Data/Real. Summary of files:
 
 chain_inputs_prelim_fit02_best4.csv - Output of preliminary fitting, used as input for MCMC model parameter estimation
-chain_data_combined.Rds - Post-burn-in MCMC model parameter estimation results
+raw_simulated_data.zip - Compressed output data from MCMC model parameter estimation (4 chains, A-D)
+chain_data_combined.Rds - Combined post-burn-in MCMC model parameter estimation results
 
 ----REAL DATA - ADDITIONAL----
 
